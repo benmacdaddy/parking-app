@@ -12,6 +12,7 @@ import Map, {
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import {Container, Row, Col} from 'react-bootstrap'
 import * as IconName from "react-icons/bs";
+import About from './About';
 
 import ControlPanel from './control-panel';
 import Pin from './pin';
@@ -43,7 +44,7 @@ const App = () => {
 
     return (
       <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
           <a
            href="#"
            class="navbar-brand mb-0 h1">
@@ -53,8 +54,8 @@ const App = () => {
           </a>
           <button
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          data-toggle="collapse"
+          data-target="#navbarNav"
           class="navbar-toggler"
           aria-controls="navbarNav"
           aria-expanded="false"
@@ -64,8 +65,8 @@ const App = () => {
           </button>
           <div
             class="collapse navbar-collapse"
-            id="navbarNav">
-              <ul class="navbar-nav">
+            id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                   <a href="#" class="nav-link active">
                     Home
@@ -81,23 +82,27 @@ const App = () => {
                      About us
                    </a>
                  </li>
-               </ul>
+              </ul>
+              {/* <form class="form-inline ml-auto my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-light" type="submit">Search</button>
+              </form> */}
           </div>
         </nav>
           <h1 className="header" class="container text-center py-3 display-4">THE HONG KONG PARKING APP</h1>
           <div class="p-1 bg-dark w-100 mt-3 mb-4"></div>
           <div class="container">
             <div class="row">
-              <div class="col"> 
+              <Col xs={12} sm={12} md={12}> 
                 <h5> 
                 This app allows you to record your parking tickets conveniently through a handy form:
                 </h5>
-                <ol class="list-group list-group-numbered">
+                <ol class="list-group list-group-numbered mb-3">
                   <li class="list-group-item">Manage your payment for parking tickets</li>
                   <li class="list-group-item">Record time and geospatial data for tracking</li>
                   <li class="list-group-item">Predictive analytics for parking trends</li>
                 </ol>
-                <hr class="" />
+                <hr class="hr-text" data-content="FORM"/>
                 <h5 class="mt-3 mb-3">
                   Please enter the details of your ticket:
                 </h5>
@@ -134,11 +139,12 @@ const App = () => {
                   </select>
                   <div class="mt-3 mb-3">
                     <em>Now please drag the marker to where your car is parked → </em>
+                  <div class="mt-3 mb-3">Currently parked in longitude {parking.longitude.toFixed(2)} and latitude {parking.latitude.toFixed(2)}</div>
                   </div>
                   <button type="submit" class="btn btn-primary btn-lg mb-5" >Submit</button>
                 </form>
-              </div>
-          <div class="col-6 mb-10" id="map">
+              </Col>
+          <Col xs={12} md={8} id="map">
             <Map
               initialViewState={{
                 latitude: 22.33581,
@@ -165,8 +171,7 @@ const App = () => {
                 <ScaleControl />
                 <ControlPanel />
             </Map>
-            
-          </div>
+          </Col>
         </div>
         </div>
       </div>
