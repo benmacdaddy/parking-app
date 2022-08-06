@@ -17,7 +17,7 @@ import About from './About';
 import ControlPanel from './control-panel';
 import Pin from './pin';
 
-const TOKEN = 'pk.eyJ1IjoiYmVubWFjZGFkZHkiLCJhIjoiY2w0cDBkNjM1MDJvcDNqbHBxNG81czJsbyJ9.uatFAHDc8aLDpUoaiRYQ0Q';
+const TOKEN = 'TOKEN';
 
 const App = () => {
 
