@@ -1,9 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { onChildAdded, push, ref as databaseRef, set } from "firebase/database";
+import { initializeApp } from "firebase/app";
+import { getDatabase} from "firebase/database";
+import { getStorage, ref as storageRef } from "firebase/storage";
+import { database, storage} from "./firebase";
+
+const PARKING_FOLDER_NAME = "parkingInfo";
 
 function Form(props) {
   
   const [inputs, setInputs] = useState({});
   const [parking, setParking] = useState({"longitude": 114.17016, "latitude": 22.33581});
+
+  useEffect(() => {
+    const parkingInfoRef = databaseRef(database, PARKING_FOLDER_NAME);
+    // onChildAdded will return data for every child at the reference and every subsequent new child
+    onChildAdded(parkingInfoRef, (data) => {
+      // Add the subsequent child to local component state, initialising a new array to trigger re-render
+      setInputs((state) => ({
+        // Store message key so we can use it as a key in our list items when rendering messages
+        parkingInfo: [...state.parkingInfo, { key: data.key, val: data.val() }],
+      }));
+    });
+  },[])
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -12,9 +31,19 @@ function Form(props) {
   }
 
   const handleSubmit = (event) => {
+    props.onAdd(inputs)
+    setInputs({
+      value:""
+    })
     event.preventDefault();
     console.log(inputs);
-  }
+ 
+      //Store records in folder in Firebase Storage
+    const fileRef = storageRef(
+      storage,
+      `${PARKING_FOLDER_NAME}`
+    );
+     }
 
   return (
     <div>
