@@ -29,17 +29,17 @@ function NavBar() {
             id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a href="#" class="nav-link active">
+                  <Link to="/" class="nav-link">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <Link to="/features" class="nav-link">
                     Features
-                  </a>
+                  </Link>
                  </li>
                  <li class="nav-item">
-                  <Link  to="/about" class="nav-link">About Us</Link>
+                  <Link to="/about" class="nav-link">About Us</Link>
                    {/* <a href="#" class="nav-link">
                      About us
                    </a> */}

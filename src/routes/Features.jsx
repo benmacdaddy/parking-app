@@ -1,9 +1,12 @@
 import React from 'react'
+import NavBar from '../NavBar'
+import Intro from '../Intro'
 
 function Features() {
     return(
         <div>
-            <h1>Our App allows you to...</h1>
+            <NavBar/>
+            <Intro/>
         </div>
     )
 }

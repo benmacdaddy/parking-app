@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import About from './About';
+import AboutUs from './routes/AboutUs';
+import Features from './routes/Features';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -13,8 +14,10 @@ root.render(
     <BrowserRouter>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
     <Routes>
+      <Route path="/features" element={<Features />}/>
+      <Route path="/about" element={<AboutUs />}/>
       <Route path="/" element={<App/>}/>
-      <Route path="/about" element={<About />}/>
+
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

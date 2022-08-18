@@ -6,14 +6,12 @@ import * as ReactDOM from 'react-dom';
 
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import {Container, Row, Col} from 'react-bootstrap'
-import About from './About';
 import NavBar from './NavBar'
 import Header from './Header'
 import Intro from './Intro'
 import Form from './Form'
 import MapBox from './MapBox.jsx'
 import SearchBar from './SearchBar'
-//import About from './routes/AboutUs.jsx';
 
 import { onChildAdded, push, ref, set } from "firebase/database";
 import { database } from "./firebase";
@@ -32,6 +30,16 @@ const App = () => {
     console.log(event);
   }
 
+  async function addTicketHandler(ticket) {
+    console.log("Submit button click appjs")
+    const response = await fetch(process.env.REACT_APP_DATABASEURL_FETCH_TICKETS, {
+      method: 'POST',
+      body: JSON.stringify(ticket),
+    });
+    const data = await response.json();
+    console.log(data);
+  }
+
     return (
       <div>
         <NavBar/>
@@ -40,7 +48,7 @@ const App = () => {
             <div class="row">
               <Col xs={12} sm={12} md={12}>
               <Intro/>
-              <Form/>
+              <Form onAddTicket={addTicketHandler}/>
               </Col>
           <Col xs={12} md={12} id="map">
             <SearchBar/>
