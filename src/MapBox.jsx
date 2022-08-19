@@ -8,6 +8,10 @@ import Map, {
   GeolocateControl  
 } from 'react-map-gl';
 import Pin from './pin';
+import './App.css';
+import './index.css';
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import {Container, Row, Col} from 'react-bootstrap'
 
 function MapBox() {
   const [inputs, setInputs] = useState({});

@@ -1,6 +1,6 @@
 import React from "react";
 import * as IconName from "react-icons/bs";
-import About from './routes/AboutUs.jsx';
+//import About from './routes/AboutUs.jsx';
 import { Link } from "react-router-dom";
 
 function NavBar() {
@@ -40,15 +40,8 @@ function NavBar() {
                  </li>
                  <li class="nav-item">
                   <Link to="/about" class="nav-link">About Us</Link>
-                   {/* <a href="#" class="nav-link">
-                     About us
-                   </a> */}
                  </li>
               </ul>
-              {/* <form class="form-inline ml-auto my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-light" type="submit">Search</button>
-              </form> */}
           </div>
         </nav>
   );

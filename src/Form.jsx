@@ -41,29 +41,9 @@ function Form(props) {
     event.preventDefault();
   }
 
-  // function handleChange(event) {
-  //   const { name, value } = event.target}
-
   // const handleSubmit = (event) => {
   //   props.onAdd(inputs)
   //   //where is onAdd
-
-  //   // setInputs({
-  //   //   value:""
-  //   // })
-  //   event.preventDefault();
-  //   console.log(inputs);
-  //   const parkingInfoRef = storageRef(database, PARKING_FOLDER_NAME);
-  //   const newMessageRef = push(parkingInfoRef);
-  //   //await set(newMessageRef, inputTextValue);
-  //   //inputTextvalue is wrong
-  // }
-
-      // const handleSubmit = async() => {
-      //   const parkingInfoRef = storageRef(database, PARKING_FOLDER_NAME);
-      //   const newParkingRef = push(parkingInfoRef);
-      //   await set(newParkingRef, inputs);
-      // }
 
   const handleSubmit = (event) => {
     console.log("Submit button click formjs")
@@ -79,20 +59,6 @@ function Form(props) {
 
       props.onAddTicket(ticket);
   }
-
-
-  //   writeData = async () => {
-  //   const messageListRef = ref(database, PARKING_FOLDER_NAME);
-  //   const newMessageRef = push(messageListRef);
-  //   await set(newMessageRef, this.state.inputTextValue);
-  // };
- 
-    //   //Store records in folder in Firebase Storage
-    // const fileRef = storageRef(
-    //   storage,
-    //   `${PARKING_FOLDER_NAME}`
-    // );
-    //  }
 
   return (
     <div>
