@@ -1,5 +1,6 @@
 import { React, useState, useCallback } from "react";
 import TicketsList from './TicketList';
+import Ticket from './Ticket'
 
 function TicketsRecord() {
   console.log("TicketsRecord")
@@ -11,7 +12,7 @@ function TicketsRecord() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('https://parking-app-ba14d-default-rtdb.asia-southeast1.firebasedatabase.app/tickets.json');
+      const response = await fetch(process.env.REACT_APP_DATABASEURL_FETCH_TICKETS);
       if (!response.ok) {
         throw new Error('Something went wrong!')
     }
@@ -31,17 +32,6 @@ function TicketsRecord() {
       })
     }
 
-    // const transformedTickets = data.results.map((ticketData) => {
-    //     return {
-    //       id: ticketData.id,
-    //       name: ticketData.name,
-    //       licenseplate: ticketData.licenseplate,
-    //       date: ticketData.date,
-    //       time: ticketData.time,
-    //       amount: ticketData.amount,
-    //     };
-    //   });
-
       setTickets(loadedTickets);
     } catch (error) {
       setError(error.message);
@@ -49,11 +39,16 @@ function TicketsRecord() {
     setIsLoading(false);
   }, []);
 
-  let content = <p>You have no tickets!</p>;
-
+  let content = "";
+  
   if (tickets.length > 0) {
     content = <TicketsList tickets={tickets} />;
   }
+
+  else if (tickets.length == 0) {
+    content = <p>You have no tickets!</p>
+  }
+  //WHY DOESNT THIS WORK???
 
   if (error) {
     content = <p>{error}</p>;
@@ -65,8 +60,8 @@ function TicketsRecord() {
 
   return (
     <div>
-      <button class="btn btn-primary btn-lg mb-5"  onClick={fetchTicketsHandler}>See Tickets</button>
-      <section>{content}</section>
+      <button class="btn btn-primary btn-lg mb-5" onClick={fetchTicketsHandler}>See Tickets</button>
+      {content}
     </div>
   );
 }
