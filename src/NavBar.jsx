@@ -39,9 +39,6 @@ function NavBar() {
                   </Link>
                  </li>
                  <li class="nav-item">
-                  <Link to="/features" class="nav-link">
-                    Features
-                  </Link>
                  </li>
                  <li class="nav-item">
                   <Link to="/about" class="nav-link">About Us</Link>

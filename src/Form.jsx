@@ -5,7 +5,7 @@ import { getDatabase} from "firebase/database";
 import { getStorage, ref as storageRef } from "firebase/storage";
 import { database, storage} from "./firebase";
 
-const PARKING_FOLDER_NAME = "parkingInfo";
+// const PARKING_FOLDER_NAME = "parkingInfo";
 
 function Form(props) {
   const nameRef = useRef('');

@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import AuthPage from './routes/AuthPage';
 import AboutUs from './routes/AboutUs';
-import Features from './routes/Features';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -16,7 +15,6 @@ root.render(
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
     <Routes>
       <Route path="/authpage" element={<AuthPage />}/>
-      <Route path="/features" element={<Features />}/>
       <Route path="/about" element={<AboutUs />}/>
       <Route path="/" element={<App/>}/>
 
