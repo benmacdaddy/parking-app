@@ -30,7 +30,7 @@ function NavBar() {
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                   <Link to="/" class="nav-link">
-                    Home
+                    About Us Home
                   </Link>
                 </li>
                 <li class="nav-item">
@@ -38,10 +38,10 @@ function NavBar() {
                     Login
                   </Link>
                  </li>
-                 <li class="nav-item">
-                 </li>
-                 <li class="nav-item">
-                  <Link to="/about" class="nav-link">About Us</Link>
+                  <li class="nav-item">
+                  <Link to="/ticketpage" class="nav-link">
+                    Tickets Page
+                  </Link>
                  </li>
               </ul>
           </div>

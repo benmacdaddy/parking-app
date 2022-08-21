@@ -1,6 +1,5 @@
 import { React, useState, useCallback } from "react";
 import TicketsList from './TicketList';
-import Ticket from './Ticket'
 
 function TicketsRecord() {
   console.log("TicketsRecord")
@@ -45,7 +44,7 @@ function TicketsRecord() {
     content = <TicketsList tickets={tickets} />;
   }
 
-  else if (tickets.length == 0) {
+  else if (tickets.length === 0) {
     content = <p>You have no tickets!</p>
   }
   //WHY DOESNT THIS WORK???
