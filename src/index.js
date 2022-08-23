@@ -15,12 +15,11 @@ root.render(
   <React.StrictMode>
     <AuthContextProvider>
     <BrowserRouter>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+    {/* <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" /> */}
     <Routes>
+      <Route path="/" element={<AboutUs />}/>
       <Route path="/authpage" element={<AuthPage />}/>
       <Route path="/ticketpage" element={<TicketsPage />}/>
-      <Route path="/" element={<AboutUs />}/>
-
     </Routes>
     </BrowserRouter>
     </AuthContextProvider>
