@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import * as IconName from "react-icons/bs";
+//import About from './routes/AboutUs.jsx';
+import { Link } from "react-router-dom";
+
+import AuthContext from "./store/auth-context";
 
 function NavBar() {
+  const authCtx = useContext(AuthContext);
+
+  const isLoggedIn= authCtx.isLoggedIn;
+
   return (
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
           <a
@@ -27,25 +35,43 @@ function NavBar() {
             id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a href="#" class="nav-link active">
-                    Home
-                  </a>
+                  <Link to="/" class="nav-link">
+                    About Us Home
+                  </Link>
                 </li>
+                {!isLoggedIn && (
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    Features
-                  </a>
+                  <Link to="/authpage" class="nav-link">
+                    Login
+                  </Link>
                  </li>
-                 <li class="nav-item">
-                   <a href="#" class="nav-link">
-                     About us
-                   </a>
+                 )}
+                 {isLoggedIn &&(
+                  <li class="nav-item">
+                  <Link to="/ticketpage" class="nav-link">
+                    Tickets Page
+                  </Link>
                  </li>
+                 )}
+                 {isLoggedIn && (
+                <li class="nav-item">
+                  <button>Logout</button>
+                </li>
+                )}
+                {/* // <li class="nav-item">
+                //   <Link to="/authpage" class="nav-link">
+                //     Login
+                //   </Link>
+                //  </li>
+                // <li class="nav-item">
+                //   <Link to="/ticketpage" class="nav-link">
+                //     Tickets Page
+                //   </Link>
+                //  </li>
+                // <li class="nav-item">
+                //   <button>Logout</button>
+                // </li> */}
               </ul>
-              {/* <form class="form-inline ml-auto my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-light" type="submit">Search</button>
-              </form> */}
           </div>
         </nav>
   );

@@ -8,7 +8,11 @@ import Map, {
   GeolocateControl  
 } from 'react-map-gl';
 import Pin from './pin';
-import ControlPanel from './control-panel';
+import './App.css';
+import './App.css.map';
+import './index.css';
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import {Container, Row, Col} from 'react-bootstrap'
 
 function MapBox() {
   const [inputs, setInputs] = useState({});
@@ -32,7 +36,7 @@ function MapBox() {
                 pitch: 0
               }}
               mapStyle="mapbox://styles/mapbox/dark-v9"
-              mapboxAccessToken="pk.eyJ1IjoiYmVubWFjZGFkZHkiLCJhIjoiY2w1M2Q1Mmc5MG9lZzNrcHAydHBnM2IzMSJ9.PUizVEOiNdtqCvgq5vhR6g"
+              mapboxAccessToken={ process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
             >
               <Marker
                   longitude={parking.longitude}
@@ -47,7 +51,6 @@ function MapBox() {
                 <FullscreenControl position="top-left" />
                 <NavigationControl position="top-left" />
                 <ScaleControl />
-                {/* <ControlPanel /> */}
             </Map>
     </div>
   );
