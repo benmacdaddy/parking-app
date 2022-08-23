@@ -1,10 +1,14 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 
 import classes from './App.css';
+import AuthContext from './store/auth-context';
 
 const AuthForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+
+  const authCtx = useContext(AuthContext);
+
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,6 +18,7 @@ const AuthForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const enteredEmail=emailInputRef.current.value;
     const enteredPassword= passwordInputRef.current.value;
 
@@ -34,9 +39,9 @@ const AuthForm = () => {
         password: enteredPassword,
         returnSecureToken: true
         }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        // headers: {
+        //   'Content-Type': 'application/json',
+        // },
       }).then((res)=> {
         setIsLoading(false);
         if (res.ok){
@@ -46,15 +51,17 @@ const AuthForm = () => {
           console.log("auth failed")
           res.json().then((data) => {
             let errorMessage = 'Authentication failed';
-            if (data && data.error && data.error.message) {
-              errorMessage = data.error.message;
-            }
+            // if (data && data.error && data.error.message) {
+            //   errorMessage = data.error.message;
+            // }
             alert(errorMessage);
             throw new Error(errorMessage);
           });
         }
-      }).then(data => {
+      })
+      .then((data) => {
         console.log(data)
+        authCtx.login(data.idToken);
       })
       .catch((error)=> {
         console.log("total error")

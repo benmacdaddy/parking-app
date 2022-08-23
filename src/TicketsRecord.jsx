@@ -2,7 +2,7 @@ import { React, useState, useCallback } from "react";
 import TicketsList from './TicketList';
 
 function TicketsRecord() {
-  console.log("TicketsRecord")
+  // console.log("TicketsRecord")
   const [tickets, setTickets] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ function TicketsRecord() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(process.env.REACT_APP_DATABASEURL_FETCH_TICKETS);
+      const response = await fetch("https://parking-app-ba14d-default-rtdb.asia-southeast1.firebasedatabase.app/tickets.json");
       if (!response.ok) {
         throw new Error('Something went wrong!')
     }
