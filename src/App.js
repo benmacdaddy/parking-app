@@ -15,9 +15,6 @@ import MapBox from './MapBox.jsx'
 import SearchBar from './SearchBar'
 import TicketsRecord from './TicketsRecord'
 
-// import { onChildAdded, push, ref, set } from "firebase/database";
-// import { database } from "./firebase";
-
 const App = () => {
 
   //const [inputs, setInputs] = useState({});
