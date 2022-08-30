@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import AuthPage from './routes/AuthPage';
 import TicketsPage from './routes/TicketsPage';
 import AboutUs from './routes/AboutUs';
@@ -15,7 +15,7 @@ root.render(
   <React.StrictMode>
     <AuthContextProvider>
     <BrowserRouter>
-    {/* <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" /> */}
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
     <Routes>
       <Route path="/" element={<AboutUs />}/>
       <Route path="/authpage" element={<AuthPage />}/>

@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
-import { onChildAdded, push, ref as databaseRef, set } from "firebase/database";
+import React, { useState, useRef } from "react";
+import { push, ref as databaseRef, set } from "firebase/database";
 import { initializeApp } from "firebase/app";
 import { getDatabase} from "firebase/database";
 import { getStorage, ref as storageRef } from "firebase/storage";
-import { database, storage} from "./firebase";
+import { database, storage} from "../firebase";
 
 // const PARKING_FOLDER_NAME = "parkingInfo";
 
@@ -64,7 +64,7 @@ function Form(props) {
     <div>
       <hr class="hr-text" data-content="FORM"/>
                 <h5 class="mt-3 mb-3">
-                  Please enter the details of your ticket:
+                  Enter the details of your ticket:
                 </h5>
                <form onSubmit={handleSubmit}>
                   <div class="input-group mt-3 mb-3">
@@ -89,7 +89,7 @@ function Form(props) {
                     <span class="input-group-text" id="inputGroup-sizing-default">Amount</span>
                     <input type="text" id="amount" ref={amountRef}  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
                   </div>
-                  <div class="form-check">
+                  {/* <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="reminder" value={inputs.reminder || ""} onChange={handleChange} id="flexCheckDefault"/>
                     <label class="form-check-label" for="flexCheckDefault">
                       Create a calendar reminder for payment
@@ -100,7 +100,7 @@ function Form(props) {
                     <option value="1">One day</option>
                     <option value="2">Two days</option>
                     <option value="3">Three days</option>
-                  </select>
+                  </select> */}
                   <div class="mt-3 mb-3">
                     <em>Drag the marker to where your car is parked → </em>
                   <div class="mt-3 mb-3">Currently parked in longitude {parking.longitude.toFixed(2)} and latitude {parking.latitude.toFixed(2)}</div>

@@ -3,7 +3,7 @@ import * as IconName from "react-icons/bs";
 //import About from './routes/AboutUs.jsx';
 import { Link } from "react-router-dom";
 
-import AuthContext from "./store/auth-context";
+import AuthContext from "../store/auth-context";
 
 function NavBar() {
   const authCtx = useContext(AuthContext);

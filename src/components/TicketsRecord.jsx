@@ -1,5 +1,5 @@
 import { React, useState, useCallback } from "react";
-import TicketsList from './TicketList';
+import TicketsList from '../TicketList';
 
 function TicketsRecord() {
   // console.log("TicketsRecord")

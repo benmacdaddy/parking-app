@@ -3,6 +3,15 @@ import React from 'react';
 import Ticket from './Ticket';
 
 const TicketList = (props) => {
+
+  // function deleteTicket(id) {
+  //   setTicket(prevNotes => {
+  //     return prevNotes.filter((noteItem, index) => {
+  //       return index !== id;
+  //     });
+  //   });
+  // }
+
   return (
     <ul className="list-group list-group-numbered mb-3">
       {props.tickets.map((ticket) => (
@@ -13,6 +22,7 @@ const TicketList = (props) => {
           date={ticket.date}
           time={ticket.time}
           amount={ticket.amount}
+          // onDelete={deleteTicket}
         />
       ))}
     </ul>

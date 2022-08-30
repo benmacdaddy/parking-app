@@ -1,5 +1,5 @@
-import AuthForm from '../AuthForm';
-import NavBar from '../NavBar'
+import AuthForm from '../components/AuthForm';
+import NavBar from '../components/NavBar'
 import React from 'react'
 
 const AuthPage = () => {

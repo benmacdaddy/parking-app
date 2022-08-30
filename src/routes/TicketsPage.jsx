@@ -5,15 +5,12 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import {Container, Row, Col} from 'react-bootstrap'
-import NavBar from '../NavBar'
-import Header from '../Header'
-import Form from '../Form'
-import MapBox from '../MapBox.jsx'
-import SearchBar from '../SearchBar'
-import TicketsRecord from '../TicketsRecord'
-
-// import { onChildAdded, push, ref, set } from "firebase/database";
-// import { database } from "./firebase";
+import NavBar from '../components/NavBar'
+import Header from '../components/Header'
+import Form from '../components/TicketForm'
+import MapBox from '../components/MapBox.jsx'
+import SearchBar from '../components/SearchBar'
+import TicketsRecord from '../components/TicketsRecord'
 
 const TicketsPage = () => {
 

@@ -7,10 +7,10 @@ import Map, {
   ScaleControl,
   GeolocateControl  
 } from 'react-map-gl';
-import Pin from './pin';
-import './App.css';
-import './App.css.map';
-import './index.css';
+import Pin from '../pin';
+import '../App.css';
+import '../App.css.map';
+import '../index.css';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import {Container, Row, Col} from 'react-bootstrap'
 

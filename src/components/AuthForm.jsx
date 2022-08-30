@@ -1,7 +1,7 @@
 import { useState, useRef, useContext } from 'react';
 
-import classes from './App.css';
-import AuthContext from './store/auth-context';
+import classes from './AuthForm.css';
+import AuthContext from '../store/auth-context';
 
 const AuthForm = () => {
   const emailInputRef = useRef();
@@ -70,7 +70,7 @@ const AuthForm = () => {
   }
 
   return (
-    <section className={classes.auth}>
+    <section>
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
       <form onSubmit={handleSubmit}>
         <div className={classes.control}>

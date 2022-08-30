@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .hr-text {
@@ -85,12 +85,12 @@ h1 {
 
 /* auth form css */
 
-.auth {
+section {
   margin: 3rem auto;
   width: 95%;
   max-width: 25rem;
   border-radius: 6px;
-  background-color: #000000;
+  background-color: #5a5a5a;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   text-align: center;
