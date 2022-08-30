@@ -1,6 +1,6 @@
 import { useState, useRef, useContext } from 'react';
 
-import classes from './AuthForm.css';
+import className from './AuthForm.css';
 import AuthContext from '../store/auth-context';
 
 const AuthForm = () => {
@@ -73,20 +73,20 @@ const AuthForm = () => {
     <section>
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
       <form onSubmit={handleSubmit}>
-        <div className={classes.control}>
+        <div className="control">
           <label htmlFor='email'>Your Email</label>
           <input type='email' id='email' required ref = {emailInputRef}/>
         </div>
-        <div className={classes.control}>
+        <div className="control">
           <label htmlFor='password'>Your Password</label>
           <input type='password' id='password' required ref={passwordInputRef}/>
         </div>
-        <div className={classes.actions}>
+        <div className="actions">
           {!isLoading &&<button>{isLogin ? 'Login' : 'Create Account'}</button>}
           {isLoading && <p> Sending request...</p>}
           <button
             type='button'
-            className={classes.toggle}
+            className="toggle"
             onClick={switchAuthModeHandler}
           >
             {isLogin ? 'Create new account' : 'Login with existing account'}

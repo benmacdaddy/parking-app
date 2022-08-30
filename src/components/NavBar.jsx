@@ -39,6 +39,11 @@ function NavBar() {
                     About Us Home
                   </Link>
                 </li>
+                <li class="nav-item active">
+                  <Link to="/MapTestPage" class="nav-link">
+                    MapTest
+                  </Link>
+                </li>
                 {!isLoggedIn && (
                 <li class="nav-item">
                   <Link to="/authpage" class="nav-link">
@@ -52,11 +57,13 @@ function NavBar() {
                     Tickets Page
                   </Link>
                  </li>
+                 
                  )}
                  {isLoggedIn && (
                 <li class="nav-item">
                   <button>Logout</button>
                 </li>
+                
                 )}
                 {/* // <li class="nav-item">
                 //   <Link to="/authpage" class="nav-link">

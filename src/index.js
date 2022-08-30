@@ -5,6 +5,7 @@ import './index.css';
 import AuthPage from './routes/AuthPage';
 import TicketsPage from './routes/TicketsPage';
 import AboutUs from './routes/AboutUs';
+import MapTestPage from './routes/MapTestPage';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -20,6 +21,7 @@ root.render(
       <Route path="/" element={<AboutUs />}/>
       <Route path="/authpage" element={<AuthPage />}/>
       <Route path="/ticketpage" element={<TicketsPage />}/>
+      <Route path="/MapTestPage" element={<MapTestPage />}/>
     </Routes>
     </BrowserRouter>
     </AuthContextProvider>

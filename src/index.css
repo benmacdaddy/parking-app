@@ -1,3 +1,6 @@
+background {
+  color: rgb(0, 0, 0)}
+
 body {
   margin: 0;
   background: rgb(0, 0, 0);
@@ -15,7 +18,7 @@ code {
 
 #map {
   width: 100vw;
-  height: 100px;
+  height: 200px;
 }
 
 .control-panel {
@@ -33,6 +36,10 @@ code {
   outline: none;
 }
 
+.map-container {
+height: 400px;
+}
+
 .sidebar {
   background-color: rgba(35, 55, 75, 0.9);
   color: #fff;
@@ -47,7 +54,7 @@ code {
 }
   
 /* auth form css */
-
+/* 
 .auth {
   margin: 3rem auto;
   width: 95%;
@@ -119,4 +126,4 @@ code {
 .actions .toggle:hover {
   background-color: transparent;
   color: #5c5c5c;
-}
+} */

@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import ReactDOM from 'react-dom';
+// import 'mapbox-gl/dist/mapbox-gl.css';
+import '../App.css';
+// import '../App.css.map';
+// import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+
 import Map, {
   Marker,
   Popup,
@@ -8,8 +14,7 @@ import Map, {
   GeolocateControl  
 } from 'react-map-gl';
 import Pin from '../pin';
-import '../App.css';
-import '../App.css.map';
+
 import '../index.css';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import {Container, Row, Col} from 'react-bootstrap'
@@ -26,7 +31,7 @@ function MapBox() {
   }
 
   return (
-    <div>
+    <div className="map-container">
       <Map
               initialViewState={{
                 latitude: 22.33581,
