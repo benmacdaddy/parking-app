@@ -71,7 +71,7 @@ const AuthForm = () => {
 
   return (
     <section>
-      <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
+      <h1 className="section">{isLogin ? 'Login' : 'Sign Up'}</h1>
       <form onSubmit={handleSubmit}>
         <div className="control">
           <label htmlFor='email'>Your Email</label>
@@ -82,7 +82,7 @@ const AuthForm = () => {
           <input type='password' id='password' required ref={passwordInputRef}/>
         </div>
         <div className="actions">
-          {!isLoading &&<button>{isLogin ? 'Login' : 'Create Account'}</button>}
+          {!isLoading &&<button >{isLogin ? 'Login' : 'Create Account'}</button>}
           {isLoading && <p> Sending request...</p>}
           <button
             type='button'

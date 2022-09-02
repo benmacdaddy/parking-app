@@ -19,6 +19,7 @@ import '../index.css';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import {Container, Row, Col} from 'react-bootstrap'
 
+
 function MapBox() {
   const [inputs, setInputs] = useState({});
   const [parking, setParking] = useState({"longitude": 114.17016, "latitude": 22.33581});
@@ -52,7 +53,7 @@ function MapBox() {
                 >
                   <Pin size={20} />
                 </Marker>
-                <GeolocateControl position="top-left" />
+                <GeolocateControl position="top-left"/>
                 <FullscreenControl position="top-left" />
                 <NavigationControl position="top-left" />
                 <ScaleControl />

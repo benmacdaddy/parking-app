@@ -36,12 +36,7 @@ function NavBar() {
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                   <Link to="/" class="nav-link">
-                    About Us Home
-                  </Link>
-                </li>
-                <li class="nav-item active">
-                  <Link to="/MapTestPage" class="nav-link">
-                    MapTest
+                    About Us
                   </Link>
                 </li>
                 {!isLoggedIn && (
@@ -61,7 +56,7 @@ function NavBar() {
                  )}
                  {isLoggedIn && (
                 <li class="nav-item">
-                  <button>Logout</button>
+                  <button type="button" class="btn btn-dark">Logout</button>
                 </li>
                 
                 )}
