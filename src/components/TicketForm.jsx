@@ -105,7 +105,7 @@ function Form(props) {
                     <em>Drag the marker to where your car is parked → </em>
                   <div class="mt-3 mb-3">Currently parked in longitude {parking.longitude.toFixed(2)} and latitude {parking.latitude.toFixed(2)}</div>
                   </div>
-                  <button type="submit" class="btn btn-primary btn-lg mb-5" >Submit</button>
+                  <button type="submit" class="btn btn-dark btn-lg mb-5" >Submit</button>
                 </form>
     </div>
   );

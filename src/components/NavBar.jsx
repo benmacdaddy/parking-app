@@ -46,14 +46,23 @@ function NavBar() {
                   </Link>
                  </li>
                  )}
+                 
                  {isLoggedIn &&(
                   <li class="nav-item">
                   <Link to="/ticketpage" class="nav-link">
                     Tickets Page
                   </Link>
                  </li>
-                 
                  )}
+                 {/* START auto change auth to tickets page */}
+                 {/* {isLoggedIn &&(
+                  <li class="nav-item">
+                  <Link to="/authpage" class="nav-link">
+                    Tickets Page
+                  </Link>
+                 </li>
+                 )} */}
+                 {/* END auto change auth to tickets page */}
                  {isLoggedIn && (
                 <li class="nav-item">
                   <button type="button" class="btn btn-dark">Logout</button>

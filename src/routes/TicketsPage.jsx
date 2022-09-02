@@ -26,7 +26,7 @@ const TicketsPage = () => {
 
   async function addTicketHandler(ticket) {
     console.log("Submit button click appjs")
-    const response = await fetch(process.env.REACT_APP_DATABASEURL_FETCH_TICKETS, {
+    const response = await fetch("https://parking-app-ba14d-default-rtdb.asia-southeast1.firebasedatabase.app/tickets.json", {
       method: 'POST',
       body: JSON.stringify(ticket),
     });

@@ -45,7 +45,7 @@ function TicketsRecord() {
   }
 
   else if (tickets.length === 0) {
-    content = <p>You have no tickets!</p>
+    content = <p></p>
   }
   //WHY DOESNT THIS WORK???
 
@@ -59,7 +59,7 @@ function TicketsRecord() {
 
   return (
     <div>
-      <button class="btn btn-primary btn-lg mb-5" onClick={fetchTicketsHandler}>See Tickets</button>
+      <button class="btn btn-dark btn-lg mb-1" onClick={fetchTicketsHandler}>See Tickets</button>
       {content}
     </div>
   );

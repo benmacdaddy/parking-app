@@ -1,9 +1,13 @@
 import { useState, useRef, useContext } from 'react';
+import {useNavigate} from "react-router-dom";
+
+import TicketsPage from '../routes/TicketsPage';
 
 import className from './AuthForm.css';
 import AuthContext from '../store/auth-context';
 
 const AuthForm = () => {
+  const navigate = useNavigate();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
@@ -46,6 +50,7 @@ const AuthForm = () => {
         setIsLoading(false);
         if (res.ok){
           console.log("response ok")
+          navigate("/ticketpage");
           return res.json();
         } else {
           console.log("auth failed")
@@ -67,6 +72,7 @@ const AuthForm = () => {
         console.log("total error")
         //alert(error.Message);
       });
+    
   }
 
   return (
